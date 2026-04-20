@@ -61,7 +61,7 @@
     "bind": "loopback",
     "auth": {
       "mode": "token",
-      "token": "37fef2b4e40d7d7d8e07b6fac24ab28a4fc3a68381ab3ffb"
+      "token": "<your-gateway-token>"
     },
     "tailscale": { "mode": "off", "resetOnExit": false },
     "nodes": {

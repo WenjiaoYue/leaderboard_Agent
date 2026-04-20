@@ -4,22 +4,22 @@
     "minimax-global": {
       "provider": "minimax",
       "type": "api_key",
-      "key": "sk-cp-LKAgYVTb1A-TrGbTtRar7C9HnFtfFxlNdVSTXk2rO9_aBzS5c1JMcZoRCxTmfnP2SHUGQUu3t7G38iIBaswe1p6eV_7hOOZy6KfZ2tVXSCbf2_bl1tZD4gs"
+      "key": "<your-minimax-api-key>"
     },
     "litellm:default": {
       "type": "api_key",
       "provider": "litellm",
-      "key": "sk-cp-LKAgYVTb1A-TrGbTtRar7C9HnFtfFxlNdVSTXk2rO9_aBzS5c1JMcZoRCxTmfnP2SHUGQUu3t7G38iIBaswe1p6eV_7hOOZy6KfZ2tVXSCbf2_bl1tZD4gs"
+      "key": "<your-litellm-api-key>"
     },
     "minimax:cn": {
       "type": "api_key",
       "provider": "minimax",
-      "key": "sk-cp-vw8CpW4W9UOCfz8qU6ydO9lmU_C3Ff_C-7qcxv_qnyv_2xg3OJHFJPvID93oJBuvtqeUisNVZmCZ6rH11YfLn4Ieqs61NBGohRAkdFmWQ0OokNfSCxzAHXc"
+      "key": "<your-minimax-cn-api-key>"
     },
     "minimax:global": {
       "type": "api_key",
       "provider": "minimax",
-      "key": "sk-cp-LKAgYVTb1A-TrGbTtRar7C9HnFtfFxlNdVSTXk2rO9_aBzS5c1JMcZoRCxTmfnP2SHUGQUu3t7G38iIBaswe1p6eV_7hOOZy6KfZ2tVXSCbf2_bl1tZD4gs"
+      "key": "<your-minimax-api-key>"
     }
   },
   "lastGood": {
