@@ -24,5 +24,32 @@ fi
 export http_proxy="${HTTP_PROXY:-$http_proxy}"
 export https_proxy="${HTTPS_PROXY:-$https_proxy}"
 
+# ── 3. Sync runtime API key into openclaw auth profiles ─────────────────────
+AUTH_PROFILES="/root/.openclaw/agents/main/agent/auth-profiles.json"
+if [[ -n "${MINIMAX_API_KEY:-}" && -f "$AUTH_PROFILES" ]]; then
+    python3 - "$AUTH_PROFILES" <<'PY'
+import json
+import os
+import sys
+
+path = sys.argv[1]
+key = os.environ["MINIMAX_API_KEY"]
+
+with open(path, "r", encoding="utf-8") as handle:
+    data = json.load(handle)
+
+profiles = data.setdefault("profiles", {})
+for name in ("minimax-global", "minimax:cn", "minimax:global"):
+    profile = profiles.get(name)
+    if isinstance(profile, dict) and profile.get("provider") == "minimax":
+        profile["key"] = key
+
+with open(path, "w", encoding="utf-8") as handle:
+    json.dump(data, handle, ensure_ascii=False, indent=2)
+    handle.write("\n")
+PY
+    echo "[entrypoint] MINIMAX_API_KEY synced to $AUTH_PROFILES"
+fi
+
 # Run whatever was passed as CMD (default: bash)
 exec "$@"
