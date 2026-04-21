@@ -1,0 +1,20 @@
+========== 一键部署后使用方法 ==========
+
+第1步：进入容器
+  docker exec -it cuda-openclaw-new bash
+
+第2步：启动 openclaw
+  openclaw
+
+第3步：在 openclaw 提示符后输入以下内容（按回车）
+
+  --- auto_run 测试推理 ---
+  帮我跑一下 Qwen/Qwen2.5-0.5B 的推理测试
+
+  --- auto_quant 量化 ---
+  用 auto_round 量化 Qwen/Qwen2.5-0.5B，W4A16，导出为 auto_gptq 格式
+
+  --- auto_eval 评估 ---
+  评估 /root/.openclaw/workspace/Qwen2.5-0.5B-W4A16 在 piqa 上的精度
+
+================================================
